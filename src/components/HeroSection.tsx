@@ -7,7 +7,7 @@ const HeroSection = () => {
     <section
       className="bg-background min-h-[85vh] flex items-center overflow-hidden relative"
       style={{
-        backgroundImage: "url('/public/children.jpg')",
+        backgroundImage: "url('/children.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
