@@ -34,8 +34,8 @@ const HeroSection = () => {
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: "-100%", opacity: 0 }}
             transition={{
-              x: { type: "spring", stiffness: 300, damping: 30 },
-              opacity: { duration: 0.8 }
+              duration: 1.2,
+              ease: "easeInOut"
             }}
             className="absolute inset-0 bg-cover bg-center"
             style={{
