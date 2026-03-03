@@ -27,20 +27,23 @@ const HeroSection = () => {
   return (
     <section className="bg-background min-h-[85vh] flex items-center overflow-hidden relative">
       <div className="absolute inset-0 z-0">
-        <AnimatePresence mode="wait">
+        <AnimatePresence initial={false}>
           <motion.div
             key={currentImageIndex}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 1.5, ease: "easeInOut" }}
+            initial={{ x: "100%", opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ x: "-100%", opacity: 0 }}
+            transition={{
+              x: { type: "spring", stiffness: 300, damping: 30 },
+              opacity: { duration: 0.8 }
+            }}
             className="absolute inset-0 bg-cover bg-center"
             style={{
               backgroundImage: `url('${images[currentImageIndex]}')`,
             }}
           />
         </AnimatePresence>
-        <div className="absolute inset-0 bg-black opacity-50"></div>
+        <div className="absolute inset-0 bg-black opacity-50 z-10"></div>
       </div>
 
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-2">
