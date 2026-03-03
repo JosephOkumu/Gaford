@@ -20,7 +20,7 @@ const Navbar = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-white">
       <div className="container mx-auto flex items-center justify-between h-16 md:h-20">
         <Link to="/" className="flex items-center gap-2">
-          <img src={logo} alt="GaFORD Logo" className="h-10 md:h-12 w-auto" />
+          <img src={logo} alt="GaFORD Logo" className="h-14 md:h-18 w-auto object-contain" />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-6">
@@ -28,11 +28,10 @@ const Navbar = () => {
             <Link
               key={link.to}
               to={link.to}
-              className={`text-sm font-medium transition-colors border-b-2 ${
-                location.pathname === link.to
+              className={`text-sm font-medium transition-colors border-b-2 ${location.pathname === link.to
                   ? "text-foreground border-orange-500"
                   : "text-muted-foreground hover:text-foreground border-transparent"
-              }`}
+                }`}
             >
               {link.label}
             </Link>
@@ -59,11 +58,10 @@ const Navbar = () => {
                 key={link.to}
                 to={link.to}
                 onClick={() => setOpen(false)}
-                className={`px-4 py-3 text-sm font-medium rounded-md transition-colors border-b-2 ${
-                  location.pathname === link.to
+                className={`px-4 py-3 text-sm font-medium rounded-md transition-colors border-b-2 ${location.pathname === link.to
                     ? "text-foreground border-orange-500"
                     : "text-muted-foreground hover:text-foreground border-transparent"
-                }`}
+                  }`}
               >
                 {link.label}
               </Link>
