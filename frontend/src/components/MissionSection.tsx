@@ -1,11 +1,9 @@
 import { motion } from "framer-motion";
-import { Heart, BookOpen, Brain, Sprout, Shield, TrendingUp } from "lucide-react";
+import { Heart, BookOpen, Sprout, TrendingUp } from "lucide-react";
 
 const pillars = [
   { icon: Heart, label: "Health" },
   { icon: BookOpen, label: "Education" },
-  { icon: Brain, label: "Mental Health" },
-  { icon: Shield, label: "Protection" },
   { icon: Sprout, label: "Growth" },
   { icon: TrendingUp, label: "Empowerment" },
 ];
