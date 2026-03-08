@@ -18,9 +18,9 @@ const MissionSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <p className="text-sm font-medium text-primary tracking-widest uppercase mb-3">Our Mission</p>
-          <h2 className="text-2xl md:text-3xl font-bold mb-12 max-w-4xl mx-auto leading-tight italic">
-            Gateway for Rural Development (GaFORD) is a dynamic and community-driven Community Based Organization (CBO) that supports <span className="text-primary not-italic">sustainable development</span> activities to provide resources and opportunities to youths.
+          <p className="text-sm font-medium text-primary tracking-widest uppercase mb-3">Who We Are</p>
+          <h2 className="text-2xl md:text-3xl font-semibold mb-12 max-w-4xl mx-auto leading-tight">
+            Gateway for Rural Development (GaFORD) is a dynamic and community-driven Community Based Organization (CBO) that supports <span className="text-primary italic">sustainable development</span> activities to provide resources and opportunities to youths.
           </h2>
         </motion.div>
 
