@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import volunteerImg from "@/assets/volunteer.jpg";
 
 const stats = [
   { value: "5,000+", label: "Youth Reached Across Kenya" },
@@ -20,7 +19,7 @@ const ImpactSection = () => {
             className="relative"
           >
             <img
-              src={volunteerImg}
+              src="/impact.jpg"
               alt="GaFORD community impact"
               className="rounded-2xl w-full object-cover aspect-[4/3]"
             />
