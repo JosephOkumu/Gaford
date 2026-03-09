@@ -10,7 +10,7 @@ const pillars = [
 
 const MissionSection = () => {
   return (
-    <section className="section-padding bg-card">
+    <section className="pt-16 pb-0 md:pt-24 md:pb-0 bg-card">
       <div className="container mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
