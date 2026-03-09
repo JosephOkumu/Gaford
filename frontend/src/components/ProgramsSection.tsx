@@ -2,31 +2,27 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import programHealth from "@/assets/program-health.jpg";
-import programEducation from "@/assets/program-education.jpg";
-import programMentalHealth from "@/assets/program-mental-health.jpg";
-import programEconomic from "@/assets/program-economic.jpg";
 
 const programs = [
   {
     title: "Reproductive Health",
     description: "Menstrual hygiene, family planning awareness, and contraceptive education for young people.",
-    image: programHealth,
+    image: "/reproductive.png",
   },
   {
     title: "Education & Leadership",
     description: "Leadership training, school support interventions, and capacity building for youth.",
-    image: programEducation,
+    image: "/education2.png",
   },
   {
     title: "Mental Health",
     description: "Awareness, stigma reduction, counseling, peer support, and community workshops.",
-    image: programMentalHealth,
+    image: "/mental.jpeg",
   },
   {
     title: "Economic Empowerment",
     description: "Small business training, financial support, and income-generation activities.",
-    image: programEconomic,
+    image: "/empowerment.jpg",
   },
 ];
 
