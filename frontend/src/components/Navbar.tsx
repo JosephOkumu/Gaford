@@ -8,7 +8,7 @@ const navLinks = [
   { label: "Home", to: "/" },
   { label: "About Us", to: "/about" },
   { label: "Programs", to: "/programs" },
-  { label: "Impact", to: "/impact" },
+  { label: "Get Involved", to: "/get-involved" },
   { label: "Contact", to: "/contact" },
 ];
 
@@ -29,8 +29,8 @@ const Navbar = () => {
               key={link.to}
               to={link.to}
               className={`text-sm font-medium transition-colors border-b-2 ${location.pathname === link.to
-                  ? "text-foreground border-orange-500"
-                  : "text-muted-foreground hover:text-foreground border-transparent"
+                ? "text-foreground border-orange-500"
+                : "text-muted-foreground hover:text-foreground border-transparent"
                 }`}
             >
               {link.label}
@@ -59,8 +59,8 @@ const Navbar = () => {
                 to={link.to}
                 onClick={() => setOpen(false)}
                 className={`px-4 py-3 text-sm font-medium rounded-md transition-colors border-b-2 ${location.pathname === link.to
-                    ? "text-foreground border-orange-500"
-                    : "text-muted-foreground hover:text-foreground border-transparent"
+                  ? "text-foreground border-orange-500"
+                  : "text-muted-foreground hover:text-foreground border-transparent"
                   }`}
               >
                 {link.label}
