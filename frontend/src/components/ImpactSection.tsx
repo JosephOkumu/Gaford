@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 
 const stats = [
-  { value: "5,000+", label: "Youth Reached Across Kenya" },
-  { value: "$500K+", label: "Resources Mobilized" },
-  { value: "100+", label: "Workshops & Trainings" },
+  { value: "2,000+", label: "Youths Reached" },
+  { value: "$50K+", label: "Resources Mobilized" },
+  { value: "20+", label: "Workshops & Trainings" },
 ];
 
 const ImpactSection = () => {
@@ -48,7 +48,7 @@ const ImpactSection = () => {
               {stats.map((stat, i) => (
                 <div key={i} className="flex items-center gap-4">
                   <div className="w-14 h-14 rounded-xl bg-accent flex items-center justify-center shrink-0">
-                    <span className="text-sm font-bold text-accent-foreground">{stat.value.replace(/[^0-9]/g, '').slice(0, 3)}</span>
+                    <span className="text-sm font-bold text-accent-foreground">{stat.value.replace(/[^0-9]/g, '')}</span>
                   </div>
                   <div>
                     <div className="text-xl font-bold text-foreground">{stat.value}</div>
