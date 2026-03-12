@@ -7,13 +7,13 @@ import testimonial2 from "@/assets/testimonial-2.jpg";
 const testimonials = [
   {
     quote: "GaFORD didn't just give me a scholarship; they gave me a vision. Their leadership training taught me that my background doesn't define my potential. Today, I am the first in my family to pursue a law degree.",
-    name: "Emmanuel Koech",
+    name: "Simeon Owalo",
     role: "Law Student & Youth Mentor",
     image: testimonial1,
   },
   {
     quote: "The mental health workshops were a turning point for our community. We've broken the silence on issues that were once taboo, and now our youth have a safe space to grow without stigma.",
-    name: "Sarah Wambui",
+    name: "Sarah Koech",
     role: "Community Health Volunteer",
     image: testimonial2,
   },
