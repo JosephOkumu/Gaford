@@ -1,10 +1,37 @@
-import { motion } from "framer-motion";
+import { motion, useInView, animate } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 
 const stats = [
   { value: "2,000+", label: "Youths Reached" },
   { value: "$50K+", label: "Resources Mobilized" },
   { value: "20+", label: "Workshops & Trainings" },
 ];
+
+const AnimatedNumber = ({ value, className }: { value: string; className?: string }) => {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true });
+  const [display, setDisplay] = useState("0");
+
+  useEffect(() => {
+    if (inView) {
+      const numericPart = parseInt(value.replace(/[^0-9]/g, ""));
+      const prefix = value.startsWith("$") ? "$" : "";
+      const suffix = value.includes("K") ? "K+" : (value.includes("+") ? "+" : "");
+
+      const controls = animate(0, numericPart, {
+        duration: 2,
+        ease: "easeOut",
+        onUpdate: (latest) => {
+          const rounded = Math.floor(latest);
+          setDisplay(`${prefix}${rounded.toLocaleString()}${suffix}`);
+        }
+      });
+      return () => controls.stop();
+    }
+  }, [inView, value]);
+
+  return <span ref={ref} className={className}>{display}</span>;
+};
 
 const ImpactSection = () => {
   return (
@@ -24,14 +51,16 @@ const ImpactSection = () => {
               className="rounded-2xl w-full object-cover aspect-[4/3]"
             />
             <div className="absolute -bottom-4 -right-4 bg-primary text-primary-foreground rounded-xl p-5 shadow-lg">
-              <div className="text-2xl font-bold">15+</div>
+              <div className="text-2xl font-bold">
+                <AnimatedNumber value="15+" />
+              </div>
               <div className="text-sm">Communities</div>
             </div>
           </motion.div>
 
           <motion.div
             initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
@@ -48,10 +77,14 @@ const ImpactSection = () => {
               {stats.map((stat, i) => (
                 <div key={i} className="flex items-center gap-4">
                   <div className="w-14 h-14 rounded-xl bg-accent flex items-center justify-center shrink-0">
-                    <span className="text-sm font-bold text-accent-foreground">{stat.value.replace(/[^0-9]/g, '')}</span>
+                    <span className="text-sm font-bold text-accent-foreground">
+                      <AnimatedNumber value={stat.value} />
+                    </span>
                   </div>
                   <div>
-                    <div className="text-xl font-bold text-foreground">{stat.value}</div>
+                    <div className="text-xl font-bold text-foreground">
+                      <AnimatedNumber value={stat.value} />
+                    </div>
                     <div className="text-sm text-muted-foreground">{stat.label}</div>
                   </div>
                 </div>
