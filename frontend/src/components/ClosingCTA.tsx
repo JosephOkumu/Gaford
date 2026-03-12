@@ -31,8 +31,8 @@ const ClosingCTA = () => {
                     >
                         GaFORD is a bridge between global support and local rural impact.
                         We are looking for hands to build, hearts to give, and voices to
-                        advocate for the next generation. From Maryland to Nairobi, there
-                        is a place for you in this story.
+                        advocate for the next generation. Building communities across the
+                        United States and Kenya, there is a place for you in this story.
                     </motion.p>
 
                     <motion.div
