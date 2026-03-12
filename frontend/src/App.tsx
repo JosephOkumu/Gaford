@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Index from "./pages/Index";
+import GetInvolved from "./pages/GetInvolved";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -20,6 +21,7 @@ const App = () => (
         <div className="pt-16 md:pt-20">
           <Routes>
             <Route path="/" element={<Index />} />
+            <Route path="/get-involved" element={<GetInvolved />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
