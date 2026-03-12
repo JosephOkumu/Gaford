@@ -16,8 +16,8 @@ const Footer = () => {
             </p>
             <div className="flex gap-3 mt-5">
               {[
-                { icon: Facebook, href: "#" },
-                { icon: Linkedin, href: "#" },
+                { icon: Facebook, href: "https://web.facebook.com/profile.php?id=100083167848712" },
+                { icon: Linkedin, href: "https://www.linkedin.com/company/gateway-for-rural-development-gaford/posts/?feedView=all" },
               ].map(({ icon: Icon, href }, i) => (
                 <a
                   key={i}
