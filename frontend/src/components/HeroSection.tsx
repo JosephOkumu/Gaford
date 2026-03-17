@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 
 const images = [
-  "/heroimage1.jpeg",
+  "/heroimage1.jpg",
   "/heroimage2.jpg",
   "/heroimage3.jpg",
 ];
