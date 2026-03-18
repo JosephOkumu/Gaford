@@ -7,6 +7,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Index from "./pages/Index";
 import GetInvolved from "./pages/GetInvolved";
+import About from "./pages/About";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfUse from "./pages/TermsOfUse";
 import NotFound from "./pages/NotFound";
@@ -23,6 +24,7 @@ const App = () => (
         <div className="pt-16 md:pt-20">
           <Routes>
             <Route path="/" element={<Index />} />
+            <Route path="/about" element={<About />} />
             <Route path="/get-involved" element={<GetInvolved />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route path="/terms" element={<TermsOfUse />} />
