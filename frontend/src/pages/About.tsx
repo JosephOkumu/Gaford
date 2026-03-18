@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import { User, Users, Shield, Rocket, Target, Heart } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 
 const About = () => {
     return (
@@ -221,14 +223,28 @@ const About = () => {
                         ))}
                     </div>
 
-                    <motion.p
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        viewport={{ once: true }}
-                        className="text-center mt-12 text-muted-foreground italic border-t border-border pt-8"
-                    >
-                        We are always looking to partner with stakeholders who share our vision of an empowered society.
-                    </motion.p>
+                    <div className="mt-16 text-center border-t border-border pt-12">
+                        <motion.p
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
+                            viewport={{ once: true }}
+                            className="text-lg text-muted-foreground italic mb-10"
+                        >
+                            We are always looking to partner with stakeholders who share our vision of an empowered society.
+                        </motion.p>
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.2 }}
+                        >
+                            <Link to="/get-involved">
+                                <Button size="lg" className="rounded-full px-10 h-14 text-lg font-bold shadow-lg shadow-primary/25 hover:scale-105 active:scale-95 transition-all">
+                                    Partner With Us
+                                </Button>
+                            </Link>
+                        </motion.div>
+                    </div>
                 </div>
             </section>
         </div>
