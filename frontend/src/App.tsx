@@ -9,6 +9,7 @@ import Index from "./pages/Index";
 import Programs from "./pages/Programs";
 import GetInvolved from "./pages/GetInvolved";
 import About from "./pages/About";
+import Donate from "./pages/Donate";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfUse from "./pages/TermsOfUse";
 import NotFound from "./pages/NotFound";
@@ -28,6 +29,7 @@ const App = () => (
             <Route path="/about" element={<About />} />
             <Route path="/programs" element={<Programs />} />
             <Route path="/get-involved" element={<GetInvolved />} />
+            <Route path="/donate" element={<Donate />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route path="/terms" element={<TermsOfUse />} />
             <Route path="*" element={<NotFound />} />
