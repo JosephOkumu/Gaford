@@ -225,13 +225,18 @@ const Programs = () => {
                                         {program.description}
                                     </p>
 
-                                    <div className="space-y-3 pt-6 border-t border-border/50">
+                                    <div className="space-y-3 pt-6 border-t border-border/50 mb-6">
                                         {program.subsections.map((sub, i) => (
                                             <div key={i} className="flex items-center gap-2">
                                                 <CheckCircle2 className={`${program.color} shrink-0`} size={14} />
                                                 <span className="text-[13px] font-bold text-foreground/70">{sub}</span>
                                             </div>
                                         ))}
+                                    </div>
+
+                                    <div className={`mt-auto p-4 ${program.bgColor} rounded-xl border border-border/50`}>
+                                        <p className="text-[11px] font-bold uppercase tracking-wider mb-1 opacity-50">Local Impact Context</p>
+                                        <p className="text-xs text-muted-foreground leading-relaxed italic">"{program.details}"</p>
                                     </div>
                                 </div>
                             </motion.div>
