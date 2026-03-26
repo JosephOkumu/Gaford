@@ -7,43 +7,70 @@ const About = () => {
     return (
         <div className="bg-background">
             {/* Our Story Hero */}
-            <section className="relative py-20 lg:py-32 overflow-hidden bg-primary/5">
+            <section className="relative py-24 lg:py-32 overflow-hidden bg-primary/5">
+                <div className="container mx-auto px-4 relative z-10 text-center">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                        className="max-w-4xl mx-auto"
+                    >
+                        <h1 className="text-5xl md:text-7xl font-black mb-8 tracking-tighter uppercase leading-none">
+                            OUR <span className="text-primary italic">STORY</span>
+                        </h1>
+                        <p className="text-xl md:text-2xl text-muted-foreground font-medium leading-relaxed mb-12">
+                            Gateway for Rural Development (GaFORD) is a Community Based Organization (CBO), dedicated to serving vulnerable adolescents, women, and youth.
+                        </p>
+                        <div className="w-24 h-2 bg-primary mx-auto rounded-full" />
+                    </motion.div>
+                </div>
+                {/* Decorative Elements */}
+                <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl opacity-50" />
+                <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl opacity-50" />
+            </section>
+
+            {/* Story Deep Dive */}
+            <section className="py-24 relative z-10 -mt-10">
                 <div className="container mx-auto px-4">
-                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                    <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
                         <motion.div
-                            initial={{ opacity: 0, x: -50 }}
+                            initial={{ opacity: 0, x: -30 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.8 }}
+                            className="bg-card border border-border/50 p-10 md:p-14 rounded-[3rem] shadow-sm hover:shadow-xl transition-all h-full flex flex-col justify-between"
                         >
-                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black mb-8 leading-tight">
-                                Our <span className="text-primary italic">Story</span>
-                            </h1>
-                            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
-                                <p>
-                                    Gateway for Rural Development (GaFORD) is a Community Based Organization (CBO), dedicated to serving vulnerable adolescents, women, and youth.
-                                </p>
-                                <p>
-                                    How it started: GaFORD was born out of a deep-seated desire to bridge the gap in resources for rural communities. We recognized that while many initiatives exist, the most marginalized — persons with disability, orphans, and those from low-income families — were often left behind.
-                                </p>
-                                <p>
-                                    Why it exists: We exist to provide a platform where every individual, regardless of their background, can access advanced opportunities. Our focus remains on those who need it most, ensuring sustainable development is a reality for all.
-                                </p>
+                            <div className="space-y-8">
+                                <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-primary">
+                                    <Target size={32} />
+                                </div>
+                                <div>
+                                    <h2 className="text-3xl font-black uppercase tracking-tighter mb-6 leading-none">HOW IT <span className="text-primary italic">STARTED</span></h2>
+                                    <p className="text-lg text-muted-foreground leading-relaxed">
+                                        GaFORD was born out of a deep-seated desire to bridge the gap in resources for rural communities. We recognized that while many initiatives exist, the most marginalized — persons with disability, orphans, and those from low-income families — were often left behind.
+                                    </p>
+                                </div>
                             </div>
                         </motion.div>
+
                         <motion.div
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
+                            initial={{ opacity: 0, x: 30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.8 }}
-                            className="relative rounded-2xl overflow-hidden shadow-2xl"
+                            className="bg-secondary text-secondary-foreground p-10 md:p-14 rounded-[3rem] shadow-xl h-full flex flex-col justify-between relative overflow-hidden"
                         >
-                            <img
-                                src="https://images.unsplash.com/photo-1531206715517-5c0ba1409ed7?auto=format&fit=crop&q=80&w=800"
-                                alt="Community work"
-                                className="w-full aspect-[4/3] object-cover"
-                            />
-                            <div className="absolute inset-0 bg-primary/10 mix-blend-multiply" />
+                            <div className="relative z-10 space-y-8">
+                                <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center text-primary">
+                                    <Rocket size={32} />
+                                </div>
+                                <div>
+                                    <h2 className="text-3xl font-black uppercase tracking-tighter mb-6 leading-none text-white">WHY WE <span className="text-primary italic">EXIST</span></h2>
+                                    <p className="text-lg opacity-80 leading-relaxed">
+                                        We exist to provide a platform where every individual, regardless of their background, can access advanced opportunities. Our focus remains on those who need it most, ensuring sustainable development is a reality for all rural youth.
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
                         </motion.div>
                     </div>
                 </div>
