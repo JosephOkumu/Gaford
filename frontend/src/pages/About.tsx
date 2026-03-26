@@ -31,13 +31,14 @@ const About = () => {
             </section>
 
             {/* Story Deep Dive */}
-            <section className="py-24 relative z-10 -mt-10">
+            <section className="py-24 relative z-10 -mt-10 overflow-hidden">
                 <div className="container mx-auto px-4">
                     <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
                         <motion.div
-                            initial={{ opacity: 0, x: -30 }}
+                            initial={{ opacity: 0, x: -200 }}
                             whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
+                            viewport={{ once: true, margin: "-100px" }}
+                            transition={{ type: "spring", stiffness: 60, damping: 15 }}
                             className="bg-card border border-border/50 p-10 md:p-14 rounded-[3rem] shadow-sm hover:shadow-xl transition-all h-full flex flex-col justify-between"
                         >
                             <div className="space-y-8">
@@ -54,9 +55,10 @@ const About = () => {
                         </motion.div>
 
                         <motion.div
-                            initial={{ opacity: 0, x: 30 }}
+                            initial={{ opacity: 0, x: 200 }}
                             whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
+                            viewport={{ once: true, margin: "-100px" }}
+                            transition={{ type: "spring", stiffness: 60, damping: 15, delay: 0.1 }}
                             className="bg-secondary text-secondary-foreground p-10 md:p-14 rounded-[3rem] shadow-xl h-full flex flex-col justify-between relative overflow-hidden"
                         >
                             <div className="relative z-10 space-y-8">
@@ -77,40 +79,49 @@ const About = () => {
             </section>
 
             {/* Mission & Vision */}
-            <section className="section-padding">
-                <div className="container mx-auto">
-                    <div className="grid md:grid-cols-2 gap-8">
+            <section className="section-padding overflow-hidden">
+                <div className="container mx-auto px-4">
+                    <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
                         <motion.div
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
+                            initial={{ opacity: 0, x: -50 }}
+                            whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
-                            className="bg-card p-10 rounded-2xl shadow-sm border border-border/50 relative overflow-hidden group"
+                            transition={{ type: "spring", stiffness: 100, damping: 20 }}
+                            whileHover={{ y: -10, transition: { duration: 0.2 } }}
+                            className="bg-card p-12 rounded-[2.5rem] shadow-sm border border-border/50 relative overflow-hidden group"
                         >
-                            <div className="absolute top-0 right-0 p-8 text-primary/10 group-hover:scale-110 transition-transform">
-                                <Target size={120} />
+                            <div className="absolute top-0 right-0 p-10 text-primary/10 group-hover:scale-125 transition-transform duration-500">
+                                <Target size={140} />
                             </div>
-                            <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
-                                <Target className="text-primary" /> MISSION
+                            <h2 className="text-3xl font-black mb-8 flex items-center gap-4">
+                                <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
+                                    <Target className="text-primary" size={24} />
+                                </div>
+                                MISSION
                             </h2>
-                            <p className="text-xl text-muted-foreground leading-relaxed relative z-10">
+                            <p className="text-xl text-muted-foreground leading-relaxed relative z-10 font-medium">
                                 To create a society where adolescents and youth have access to resources and advanced opportunities through actively supporting sustainable development activities.
                             </p>
                         </motion.div>
 
                         <motion.div
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
+                            initial={{ opacity: 0, x: 50 }}
+                            whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
-                            transition={{ delay: 0.2 }}
-                            className="bg-primary p-10 rounded-2xl shadow-xl border border-primary relative overflow-hidden group"
+                            transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.2 }}
+                            whileHover={{ y: -10, transition: { duration: 0.2 } }}
+                            className="bg-primary p-12 rounded-[2.5rem] shadow-2xl border border-primary relative overflow-hidden group"
                         >
-                            <div className="absolute top-0 right-0 p-8 text-white/10 group-hover:scale-110 transition-transform">
-                                <Rocket size={120} />
+                            <div className="absolute top-0 right-0 p-10 text-white/10 group-hover:scale-125 transition-transform duration-500">
+                                <Rocket size={140} />
                             </div>
-                            <h2 className="text-3xl font-bold mb-6 text-white flex items-center gap-3">
-                                <Rocket className="text-white" /> VISION
+                            <h2 className="text-3xl font-black mb-8 text-white flex items-center gap-4">
+                                <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center">
+                                    <Rocket className="text-white" size={24} />
+                                </div>
+                                VISION
                             </h2>
-                            <p className="text-xl text-white/90 leading-relaxed relative z-10">
+                            <p className="text-xl text-white/90 leading-relaxed relative z-10 font-medium">
                                 Empowered society where adolescents and youths are free from poverty and inequity.
                             </p>
                         </motion.div>
@@ -119,54 +130,69 @@ const About = () => {
             </section>
 
             {/* Core Values */}
-            <section className="section-padding bg-secondary text-secondary-foreground">
-                <div className="container mx-auto">
+            <section className="py-24 bg-secondary text-secondary-foreground overflow-hidden">
+                <div className="container mx-auto px-4">
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
+                        initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         className="text-center mb-16"
                     >
-                        <h2 className="text-4xl md:text-5xl font-black mb-6 uppercase">CORE <span className="text-primary italic">VALUES</span></h2>
+                        <p className="text-sm font-black text-primary tracking-widest uppercase mb-4">Our Foundation</p>
+                        <h2 className="text-4xl md:text-6xl font-black mb-8 uppercase tracking-tighter">CORE <span className="text-primary italic">VALUES</span></h2>
                         <div className="w-24 h-2 bg-primary mx-auto rounded-full" />
                     </motion.div>
 
-                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
                         {[
                             {
                                 title: "Equality",
                                 desc: "GaFORD holds that all people must be treated fairly and with dignity.",
-                                icon: Users
+                                icon: Users,
+                                color: "text-orange-500"
                             },
                             {
                                 title: "Equity",
                                 desc: "We believe in non-discrimination in access and utilization of community resources.",
-                                icon: Shield
+                                icon: Shield,
+                                color: "text-blue-500"
                             },
                             {
                                 title: "Social Justice",
                                 desc: "We work towards promoting a just society and promoting dignity particularly among the needy and marginalized.",
-                                icon: Heart
+                                icon: Heart,
+                                color: "text-teal-500"
                             },
                             {
                                 title: "Accountability",
                                 desc: "We hold our actions accountable to the highest level of ethical behavior and responsibility.",
-                                icon: Target
+                                icon: Target,
+                                color: "text-indigo-500"
                             }
                         ].map((value, i) => (
                             <motion.div
                                 key={i}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
+                                initial={{ opacity: 0, scale: 0.9 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
                                 viewport={{ once: true }}
-                                transition={{ delay: i * 0.1 }}
-                                className="bg-secondary-foreground/5 border border-secondary-foreground/10 p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow group"
+                                transition={{
+                                    type: "spring",
+                                    stiffness: 200,
+                                    damping: 20,
+                                    delay: i * 0.1
+                                }}
+                                whileHover={{
+                                    y: -8,
+                                    boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)"
+                                }}
+                                className="bg-white/5 border border-white/10 p-10 rounded-[2.5rem] shadow-sm transition-all group relative overflow-hidden"
                             >
-                                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-secondary transition-colors">
-                                    <value.icon size={24} />
+                                <div className={`w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center mb-8 ${value.color} group-hover:scale-110 transition-transform duration-300 shadow-inner`}>
+                                    <value.icon size={28} />
                                 </div>
-                                <h3 className="text-xl font-bold mb-3 text-secondary-foreground">{value.title}</h3>
-                                <p className="text-secondary-foreground/70 leading-relaxed">{value.desc}</p>
+                                <h3 className="text-xl font-black mb-4 text-white uppercase tracking-wider">{value.title}</h3>
+                                <p className="text-white/60 leading-relaxed font-medium text-sm">{value.desc}</p>
+                                <div className="absolute -bottom-2 -right-2 w-12 h-12 bg-white/5 rounded-full blur-xl group-hover:bg-primary/20 transition-colors" />
                             </motion.div>
                         ))}
                     </div>
