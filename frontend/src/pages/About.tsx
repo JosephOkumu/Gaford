@@ -200,39 +200,76 @@ const About = () => {
             </section>
 
             {/* Our Team Section */}
-            <section className="section-padding">
-                <div className="container mx-auto">
+            <section className="py-24 bg-background">
+                <div className="container mx-auto px-4">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         className="text-center mb-16"
                     >
-                        <h2 className="text-4xl font-black mb-4 uppercase">OUR <span className="text-primary italic">TEAM</span></h2>
-                        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                            Our strength lies in our experts who are dedicated to training and economic empowerment.
+                        <p className="text-sm font-black text-primary tracking-widest uppercase mb-4">The Visionaries</p>
+                        <h2 className="text-4xl md:text-6xl font-black mb-8 uppercase tracking-tighter">OUR <span className="text-primary italic">TEAM</span></h2>
+                        <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-medium">
+                            Our strength lies in our experts who are dedicated to training, economic empowerment, and sustainable community development.
                         </p>
                     </motion.div>
 
                     <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
-                        {[1, 2, 3].map((item) => (
+                        {[
+                            {
+                                name: "Collins Oswago",
+                                role: "Executive Director",
+                                bio: "Collins is a Gender, Youth and International Development Specialist. Collins holds a Masters Degree in International Studies from Morgan State University. His goal is to inspire bold and authentic living among the Youth."
+                            },
+                            {
+                                name: "Antonina Mudimba",
+                                role: "Programs Manager",
+                                bio: "Antonina Mudimba holds a Bachelor’s degree in Nursing from Towson University, Maryland and a Master’s degree in nursing with a concentration as a Family Nurse Practitioner from Herzing University, Wisconsin."
+                            },
+                            {
+                                name: "George Elijah",
+                                role: "Director: Asset, Strategy and Knowledge Management",
+                                bio: "George has a background in Physics, Computer Technology, and Security with a Master of Science degree in Physics and a Bachelor of Science from the University of Nairobi and holds certifications in CompTIA A+ ce and CompTIA Security+ ce certifications."
+                            },
+                            {
+                                name: "Effie Otieno",
+                                role: "M&E and Research Director",
+                                bio: "Effie is a professional in the research field. She is also a Certified Monitoring and Evaluation Specialist with immense knowledge and experience in research and development and a passion for women and youth empowerment."
+                            },
+                            {
+                                name: "Kenneth Odoyo",
+                                role: "Finance and Administration Director",
+                                bio: "Kenneth O. Odoyo holds a Bachelor’s Degree in Commerce (Finance) from KCA University and is currently pursuing C.P.A. He has vast knowledge and experience in Financial Management."
+                            },
+                            {
+                                name: "Isaac Kiche",
+                                role: "Program Manager",
+                                bio: "Isaac Kiche Abok is a results-driven professional with experience in statistical analysis, strategic planning, and human capital development. He is passionately committed to empowering student leaders through skill-building."
+                            }
+                        ].map((member, i) => (
                             <motion.div
-                                key={item}
+                                key={i}
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                className="group"
+                                transition={{ delay: i * 0.1 }}
+                                className="group bg-card border border-border/50 p-10 rounded-[2.5rem] shadow-sm hover:shadow-2xl transition-all duration-500"
                             >
-                                <div className="aspect-square rounded-2xl overflow-hidden mb-6 bg-muted relative">
-                                    <div className="absolute inset-0 flex items-center justify-center text-muted-foreground/20">
-                                        <User size={80} />
+                                <div className="aspect-square rounded-[2rem] overflow-hidden mb-8 bg-muted relative border border-border/10">
+                                    <div className="absolute inset-0 flex items-center justify-center text-muted-foreground/10">
+                                        <User size={100} />
                                     </div>
-                                    {/* <img src={`/team-${item}.jpg`} alt="Team member" className="w-full h-full object-cover" /> */}
+                                    <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity" />
                                 </div>
-                                <h3 className="text-2xl font-bold mb-2">Team Member Name</h3>
-                                <p className="text-primary font-medium mb-4 italic">Position / Role</p>
-                                <p className="text-muted-foreground text-sm leading-relaxed">
-                                    Brief bio goes here. This professional is dedicated to GaFORD's mission, bringing expertise in workforce development and community engagement.
+                                <h3 className="text-2xl font-black uppercase tracking-tight mb-2 leading-none group-hover:text-primary transition-colors">
+                                    {member.name}
+                                </h3>
+                                <p className="text-primary font-bold tracking-[0.1em] text-[11px] mb-6 inline-block bg-primary/5 px-4 py-1.5 rounded-full">
+                                    {member.role.toUpperCase()}
+                                </p>
+                                <p className="text-muted-foreground text-sm leading-relaxed font-medium">
+                                    {member.bio}
                                 </p>
                             </motion.div>
                         ))}
