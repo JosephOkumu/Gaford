@@ -257,12 +257,12 @@ const About = () => {
                                 transition={{ delay: i * 0.1 }}
                                 className="group bg-card border border-border/50 p-10 rounded-[2.5rem] shadow-sm hover:shadow-2xl transition-all duration-500"
                             >
-                                <div className="aspect-square rounded-[2rem] overflow-hidden mb-8 bg-muted relative border border-border/10">
+                                <div className="aspect-square rounded-[2rem] overflow-hidden mb-8 bg-muted relative border border-border/10 group-hover:border-primary/20 transition-all duration-500">
                                     {member.image ? (
                                         <img
                                             src={member.image}
                                             alt={member.name}
-                                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                                         />
                                     ) : (
                                         <div className="absolute inset-0 flex items-center justify-center text-muted-foreground/10">
@@ -302,22 +302,55 @@ const About = () => {
                     </motion.div>
 
                     <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                        {[1, 2, 3, 4].map((item) => (
+                        {[
+                            {
+                                name: "Tangata Group",
+                                image: "/Tangata.png",
+                                description: "Tangata Group is a human and disability rights-based organization that facilitates collaboration among domestic and international communities in developing local projects."
+                            },
+                        ].map((partner, index) => (
                             <motion.div
-                                key={item}
+                                key={index}
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                transition={{ delay: item * 0.1 }}
-                                className="bg-background p-6 rounded-2xl border border-border shadow-sm hover:shadow-md transition-all group"
+                                transition={{ delay: index * 0.1 }}
+                                className="bg-background p-6 rounded-2xl border border-border shadow-sm hover:shadow-md transition-all group h-full flex flex-col"
                             >
-                                <div className="aspect-video rounded-xl overflow-hidden mb-6 bg-muted flex items-center justify-center text-muted-foreground/30 group-hover:bg-primary/5 transition-colors">
-                                    <Users size={40} />
+                                <div className="w-full rounded-[2rem] overflow-hidden mb-8 border border-border/10 shadow-sm relative group-hover:shadow-xl transition-all duration-500 bg-background">
+                                    {partner.image ? (
+                                        <img
+                                            src={partner.image}
+                                            alt={partner.name}
+                                            className="w-full h-auto block transition-all duration-700 group-hover:scale-105"
+                                        />
+                                    ) : (
+                                        <div className="aspect-video flex items-center justify-center bg-muted/20">
+                                            <Users size={48} className="text-muted-foreground/10" />
+                                        </div>
+                                    )}
                                 </div>
-                                <h3 className="text-xl font-bold mb-3 text-foreground">Partner Name</h3>
-                                <p className="text-sm text-muted-foreground leading-relaxed">
-                                    Placeholder for a short description about this partner and our shared goals in supporting sustainable development.
+                                <h3 className="text-xl font-bold mb-3 text-foreground group-hover:text-primary transition-colors">
+                                    {partner.name}
+                                </h3>
+                                <p className="text-sm text-muted-foreground leading-relaxed font-medium">
+                                    {partner.description}
                                 </p>
+                            </motion.div>
+                        ))}
+
+                        {/* Additional placeholders to maintain layout if needed */}
+                        {[1, 2, 3].map((item) => (
+                            <motion.div
+                                key={`placeholder-${item}`}
+                                initial={{ opacity: 0, scale: 0.95 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: (item + 1) * 0.1 }}
+                                className="bg-background/40 border border-dashed border-border/50 p-6 rounded-2xl flex flex-col items-center justify-center text-muted-foreground/20 min-h-[250px]"
+                            >
+                                <Users size={40} />
+                                <p className="mt-4 text-xs font-bold uppercase tracking-widest">Future Partner</p>
                             </motion.div>
                         ))}
                     </div>
