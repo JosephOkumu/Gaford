@@ -220,6 +220,7 @@ const About = () => {
                             {
                                 name: "Collins Oswago",
                                 role: "Executive Director",
+                                image: "/Collins.jpeg",
                                 bio: "Collins is a Gender, Youth and International Development Specialist. Collins holds a Masters Degree in International Studies from Morgan State University. His goal is to inspire bold and authentic living among the Youth."
                             },
                             {
@@ -247,7 +248,7 @@ const About = () => {
                                 role: "Program Manager",
                                 bio: "Isaac Kiche Abok is a results-driven professional with experience in statistical analysis, strategic planning, and human capital development. He is passionately committed to empowering student leaders through skill-building."
                             }
-                        ].map((member, i) => (
+                        ].map((member: any, i) => (
                             <motion.div
                                 key={i}
                                 initial={{ opacity: 0, y: 30 }}
@@ -257,10 +258,18 @@ const About = () => {
                                 className="group bg-card border border-border/50 p-10 rounded-[2.5rem] shadow-sm hover:shadow-2xl transition-all duration-500"
                             >
                                 <div className="aspect-square rounded-[2rem] overflow-hidden mb-8 bg-muted relative border border-border/10">
-                                    <div className="absolute inset-0 flex items-center justify-center text-muted-foreground/10">
-                                        <User size={100} />
-                                    </div>
-                                    <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+                                    {member.image ? (
+                                        <img
+                                            src={member.image}
+                                            alt={member.name}
+                                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                        />
+                                    ) : (
+                                        <div className="absolute inset-0 flex items-center justify-center text-muted-foreground/10">
+                                            <User size={100} />
+                                        </div>
+                                    )}
+                                    <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
                                 </div>
                                 <h3 className="text-2xl font-black uppercase tracking-tight mb-2 leading-none group-hover:text-primary transition-colors">
                                     {member.name}
