@@ -308,6 +308,11 @@ const About = () => {
                                 image: "/Tangata.png",
                                 description: "Tangata Group is a human and disability rights-based organization that facilitates collaboration among domestic and international communities in developing local projects."
                             },
+                            {
+                                name: "Activate Action",
+                                image: "/activate.jpg",
+                                description: "Activate Action is a youth-led for impact organization. We empower young people and women in Kenya, including those living with HIV and disabilities, through integrated services in health, mental health, HIV prevention, leadership development, and economic empowerment."
+                            },
                         ].map((partner, index) => (
                             <motion.div
                                 key={index}
