@@ -295,7 +295,7 @@ const About = () => {
                         viewport={{ once: true }}
                         className="text-center mb-16"
                     >
-                        <h2 className="text-4xl font-black mb-4 uppercase text-foreground">Our Strategic <span className="text-primary italic">Partners</span></h2>
+                        <h2 className="text-4xl font-black mb-4 uppercase text-foreground">OUR <span className="text-primary italic">PARTNERS</span></h2>
                         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                             Expanding our network through collaboration with education stakeholders and community organizations.
                         </p>
@@ -304,16 +304,16 @@ const About = () => {
                     <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
                         {[
                             {
-                                name: "Tangata Group",
-                                image: "/Tangata.png",
-                                website: "https://www.tangatagroup.org/",
-                                description: "Tangata Group is a human and disability rights-based organization that facilitates collaboration among domestic and international communities in developing local projects."
-                            },
-                            {
                                 name: "Activate Action",
                                 image: "/activate.jpg",
                                 website: "https://activateaction.org/",
                                 description: "Activate Action is a youth-led for impact organization. We empower young people and women in Kenya, including those living with HIV and disabilities, through integrated services in health, mental health, HIV prevention, leadership development, and economic empowerment."
+                            },
+                            {
+                                name: "Tangata Group",
+                                image: "/Tangata.png",
+                                website: "https://www.tangatagroup.org/",
+                                description: "Tangata Group is a human and disability rights-based organization that facilitates collaboration among domestic and international communities in developing local projects."
                             },
                             {
                                 name: "Mama Agnes Ochilo Foundation",
