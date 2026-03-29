@@ -162,20 +162,6 @@ const Programs = () => {
                             <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed mb-10">
                                 At GaFORD, we believe in a holistic approach to community development. Our programs are designed to address the interconnected needs of adolescents, youth, and women in rural areas.
                             </p>
-                            <div className="flex flex-wrap justify-center gap-4">
-                                <Button
-                                    size="lg"
-                                    className="rounded-full px-8 h-12 font-bold bg-primary text-secondary hover:scale-105 transition-transform"
-                                    onClick={() => document.getElementById('impact-programs')?.scrollIntoView({ behavior: 'smooth' })}
-                                >
-                                    Explore All Programs
-                                </Button>
-                                <Link to="/get-involved">
-                                    <Button variant="outline" size="lg" className="rounded-full px-8 h-12 font-bold border-primary text-primary hover:bg-primary/5 transition-colors">
-                                        Get Involved
-                                    </Button>
-                                </Link>
-                            </div>
                         </motion.div>
                     </div>
                 </div>
