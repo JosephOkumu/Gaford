@@ -301,7 +301,7 @@ const About = () => {
                         </p>
                     </motion.div>
 
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
                         {[
                             {
                                 name: "Tangata Group",
@@ -315,9 +315,9 @@ const About = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.1 }}
-                                className="bg-background p-6 rounded-2xl border border-border shadow-sm hover:shadow-md transition-all group h-full flex flex-col"
+                                className="bg-background p-8 rounded-[2.5rem] border border-border/50 shadow-sm hover:shadow-xl transition-all group h-full flex flex-col"
                             >
-                                <div className="w-full rounded-[2rem] overflow-hidden mb-8 border border-border/10 shadow-sm relative group-hover:shadow-xl transition-all duration-500 bg-background">
+                                <div className="w-full rounded-[1.5rem] overflow-hidden mb-8 border border-border/10 shadow-sm relative group-hover:shadow-xl transition-all duration-500 bg-background">
                                     {partner.image ? (
                                         <img
                                             src={partner.image}
@@ -330,7 +330,7 @@ const About = () => {
                                         </div>
                                     )}
                                 </div>
-                                <h3 className="text-xl font-bold mb-3 text-foreground group-hover:text-primary transition-colors">
+                                <h3 className="text-xl font-bold mb-4 text-foreground group-hover:text-primary transition-colors">
                                     {partner.name}
                                 </h3>
                                 <p className="text-sm text-muted-foreground leading-relaxed font-medium">
@@ -339,18 +339,18 @@ const About = () => {
                             </motion.div>
                         ))}
 
-                        {/* Additional placeholders to maintain layout if needed */}
-                        {[1, 2, 3].map((item) => (
+                        {/* Additional placeholders to maintain layout */}
+                        {[1, 2].map((item) => (
                             <motion.div
                                 key={`placeholder-${item}`}
                                 initial={{ opacity: 0, scale: 0.95 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: (item + 1) * 0.1 }}
-                                className="bg-background/40 border border-dashed border-border/50 p-6 rounded-2xl flex flex-col items-center justify-center text-muted-foreground/20 min-h-[250px]"
+                                className="bg-background/40 border border-dashed border-border/50 p-8 rounded-[2.5rem] flex flex-col items-center justify-center text-muted-foreground/20 min-h-[300px]"
                             >
-                                <Users size={40} />
-                                <p className="mt-4 text-xs font-bold uppercase tracking-widest">Future Partner</p>
+                                <Users size={48} />
+                                <p className="mt-4 text-sm font-bold uppercase tracking-widest">Future Partner</p>
                             </motion.div>
                         ))}
                     </div>
