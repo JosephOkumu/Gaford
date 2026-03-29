@@ -40,6 +40,41 @@ const highlights = [
         date: "October 2025",
         description: "Engaged in a leadership training and mentoring program organized by the Kenya Young Members of County Assembly, Nyanza chapter",
         type: "Leadership"
+    },
+    {
+        title: "Community Outreach",
+        image: "/event5.jpg",
+        date: "September 2025",
+        description: "",
+        type: "Gallery"
+    },
+    {
+        title: "Advocacy Campaign",
+        image: "/event6.jpg",
+        date: "July 2024",
+        description: "Gaford team on a campaign to eradicating FGM in Migori",
+        type: "Community"
+    },
+    {
+        title: "Planetary Health Summit",
+        image: "/event7.jpg",
+        date: "August 2024",
+        description: "Gaford team participating in the Youth Innovation For Planetary Health summit at Jomo Kenyatta University of Agriculture and Technology (JKUAT)",
+        type: "Summit"
+    },
+    {
+        title: "Strategic Partnership",
+        image: "/event9.jpg",
+        date: "June 2024",
+        description: "Meet with the First Lady of Migori, Dr Agnes Ochilo to discuss a possible partnership with Gaford",
+        type: "Meeting"
+    },
+    {
+        title: "Advocacy and Inclusion",
+        image: "/event10.jpeg",
+        date: "May 2024",
+        description: "Gaford's executive director Collins Oswago with Judy Huemann",
+        type: "Advocacy"
     }
 ];
 
