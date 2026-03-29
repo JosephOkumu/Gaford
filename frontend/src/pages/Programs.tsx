@@ -14,28 +14,32 @@ import { Link } from "react-router-dom";
 
 const highlights = [
     {
-        title: "Community Outreach in Kisumu",
+        title: "International Collaboration",
+        image: "/event1.jpeg",
         date: "August 2025",
-        description: "Our team reaching out to the vulnerable population in rural Kisumu to distribute essentials.",
-        type: "Outreach"
+        description: "Gaford's executive director Collins Oswago with Janet E. Lord, a UN Special Rapporteur on rights of persons with disabilities who also serves as the executive director of the University of Baltimore's Center for International and Comparative Law.",
+        type: "Advocacy"
     },
     {
-        title: "Elimisha Wote Launch",
-        date: "January 2024",
-        description: "Official launch of the initiative targeting teenage mothers returning to school.",
-        type: "Event"
+        title: "CRPD State Parties Conference",
+        image: "/event2.jpeg",
+        date: "June 2024",
+        description: "The 17th Conference of State Parties to the Convention on the Rights of Persons with Disabilities (CRPD)",
+        type: "Global Event"
     },
     {
-        title: "Team Seminar on Leadership",
+        title: "SID-US Conference",
+        image: "/event3.jpeg",
+        date: "May 2024",
+        description: "Gaford's executive director joined other Global Development Practitioners and professionals at the Society for International Development (SID-US) Conference in Washington DC",
+        type: "Conference"
+    },
+    {
+        title: "Leadership Mentoring",
+        image: "/event4.jpeg",
         date: "October 2025",
-        description: "Team and Board members attending the annual leadership and economic empowerment summit.",
-        type: "Team"
-    },
-    {
-        title: "Sanitary Towels Distribution",
-        date: "March 2025",
-        description: "Empowering school-going girls through hygiene education and material support.",
-        type: "Program"
+        description: "Engaged in a leadership training and mentoring program organized by the Kenya Young Members of County Assembly, Nyanza chapter",
+        type: "Leadership"
     }
 ];
 
@@ -132,30 +136,26 @@ const Programs = () => {
                         {highlights.map((item, index) => (
                             <motion.div
                                 key={index}
-                                initial={{ opacity: 0, scale: 0.95 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                transition={{ delay: index * 0.1 }}
-                                className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-secondary-foreground/10 group"
+                                transition={{ delay: index * 0.1, duration: 0.5 }}
+                                className="group bg-card border border-border rounded-xl overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col h-full text-foreground"
                             >
-                                {/* Event Image Placeholder */}
-                                <div className="aspect-[3/4] bg-muted relative flex items-center justify-center overflow-hidden">
-                                    <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity" />
-                                    <ImageIcon className="text-muted-foreground/20" size={60} />
-                                    <div className="absolute top-4 left-4">
-                                        <span className="px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-[10px] font-black uppercase tracking-widest text-primary shadow-sm border border-primary/10">
-                                            {item.type}
-                                        </span>
-                                    </div>
+                                <div className="aspect-[4/3] overflow-hidden">
+                                    <img
+                                        src={item.image}
+                                        alt={item.title}
+                                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                    />
                                 </div>
-
-                                <div className="p-6">
+                                <div className="p-5 flex flex-col flex-grow bg-card">
                                     <div className="flex items-center gap-2 text-primary mb-3">
                                         <Calendar size={14} />
-                                        <span className="text-xs font-bold uppercase tracking-wider">{item.date}</span>
+                                        <span className="text-[11px] font-bold uppercase tracking-wider">{item.date} • {item.type}</span>
                                     </div>
-                                    <h3 className="text-lg font-bold mb-3 leading-tight group-hover:text-primary transition-colors uppercase text-gray-900">{item.title}</h3>
-                                    <p className="text-sm text-gray-600 leading-relaxed font-medium">
+                                    <h3 className="text-lg font-bold mb-2 uppercase tracking-tight">{item.title}</h3>
+                                    <p className="text-sm text-muted-foreground leading-relaxed font-medium">
                                         {item.description}
                                     </p>
                                 </div>
@@ -164,7 +164,7 @@ const Programs = () => {
                     </div>
 
                     <div className="mt-16 text-center">
-                        <Button variant="outline" className="rounded-full px-8 h-12 font-bold border-white/20 text-white hover:bg-white/10 group">
+                        <Button variant="outline" className="rounded-full px-8 h-12 font-bold border-white/20 text-white bg-white/10 hover:bg-white/20 transition-all transition-colors group shadow-none">
                             Load More Highlights <ArrowRight size={18} className="ml-2 group-hover:translate-x-1 transition-transform" />
                         </Button>
                     </div>
