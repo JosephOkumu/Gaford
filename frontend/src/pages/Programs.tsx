@@ -14,39 +14,11 @@ import { Link } from "react-router-dom";
 
 const highlights = [
     {
-        title: "International Collaboration",
-        image: "/event1.jpeg",
-        date: "August 2025",
-        description: "Gaford's executive director Collins Oswago with Janet E. Lord, a UN Special Rapporteur on rights of persons with disabilities who also serves as the executive director of the University of Baltimore's Center for International and Comparative Law.",
-        type: "Advocacy"
-    },
-    {
-        title: "CRPD State Parties Conference",
-        image: "/event2.jpeg",
-        date: "June 2024",
-        description: "The 17th Conference of State Parties to the Convention on the Rights of Persons with Disabilities (CRPD)",
-        type: "Global Event"
-    },
-    {
-        title: "SID-US Conference",
-        image: "/event3.jpeg",
-        date: "May 2024",
-        description: "Gaford's executive director joined other Global Development Practitioners and professionals at the Society for International Development (SID-US) Conference in Washington DC",
-        type: "Conference"
-    },
-    {
         title: "Leadership Mentoring",
         image: "/event4.jpeg",
         date: "October 2025",
         description: "Engaged in a leadership training and mentoring program organized by the Kenya Young Members of County Assembly, Nyanza chapter",
         type: "Leadership"
-    },
-    {
-        title: "Community Outreach",
-        image: "/event5.jpg",
-        date: "September 2025",
-        description: "",
-        type: "Gallery"
     },
     {
         title: "Advocacy Campaign",
@@ -56,11 +28,11 @@ const highlights = [
         type: "Community"
     },
     {
-        title: "Planetary Health Summit",
-        image: "/event7.jpg",
-        date: "August 2024",
-        description: "Gaford team participating in the Youth Innovation For Planetary Health summit at Jomo Kenyatta University of Agriculture and Technology (JKUAT)",
-        type: "Summit"
+        title: "CRPD State Parties Conference",
+        image: "/event2.jpeg",
+        date: "June 2024",
+        description: "The 17th Conference of State Parties to the Convention on the Rights of Persons with Disabilities (CRPD)",
+        type: "Global Event"
     },
     {
         title: "Strategic Partnership",
@@ -75,6 +47,34 @@ const highlights = [
         date: "May 2024",
         description: "Gaford's executive director Collins Oswago with Judy Huemann",
         type: "Advocacy"
+    },
+    {
+        title: "Planetary Health Summit",
+        image: "/event7.jpg",
+        date: "August 2024",
+        description: "Gaford team participating in the Youth Innovation For Planetary Health summit at Jomo Kenyatta University of Agriculture and Technology (JKUAT)",
+        type: "Summit"
+    },
+    {
+        title: "International Collaboration",
+        image: "/event1.jpeg",
+        date: "August 2025",
+        description: "Gaford's executive director Collins Oswago with Janet E. Lord, a UN Special Rapporteur on rights of persons with disabilities who also serves as the executive director of the University of Baltimore's Center for International and Comparative Law.",
+        type: "Advocacy"
+    },
+    {
+        title: "SID-US Conference",
+        image: "/event3.jpeg",
+        date: "May 2024",
+        description: "Gaford's executive director joined other Global Development Practitioners and professionals at the Society for International Development (SID-US) Conference in Washington DC",
+        type: "Conference"
+    },
+    {
+        title: "Community Outreach",
+        image: "/event5.jpg",
+        date: "September 2025",
+        description: "",
+        type: "Gallery"
     }
 ];
 
