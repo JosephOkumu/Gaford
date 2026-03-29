@@ -2,13 +2,8 @@ import { motion } from "framer-motion";
 import {
     Heart,
     GraduationCap,
-    Dna,
-    Brain,
-    ShieldAlert,
     TrendingUp,
-    Award,
     ArrowRight,
-    CheckCircle2,
     Image as ImageIcon,
     Calendar,
     Users
@@ -16,106 +11,6 @@ import {
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
-const programs = [
-    {
-        id: "adolescent-empowerment",
-        title: "Adolescent & Youth Empowerment",
-        description: "Empowering the next generation with knowledge, skills, and opportunities to reach their full potential.",
-        icon: Award,
-        subsections: [
-            "Reproductive Health Education",
-            "Life Skills Training",
-            "Talent Nurturing"
-        ],
-        details: "We work with youth in Kisumu and Kajulu, focusing on reproductive health, menstrual hygiene, and the 'Build Talent Initiative' to create sustainable income streams.",
-        color: "text-orange-500",
-        bgColor: "bg-orange-50",
-    },
-    {
-        id: "health-wellness",
-        title: "Health & Wellness",
-        description: "Promoting holistic health services and education to ensure a healthy and thriving community.",
-        icon: Heart,
-        subsections: [
-            "Reproductive Health Program",
-            "Menstrual Hygiene Management",
-            "Family Planning & Contraception"
-        ],
-        details: "Going beyond the absence of disease, we provide training for girls on hygiene and distribute sanitary towels to ensure inclusivity in education.",
-        color: "text-red-500",
-        bgColor: "bg-red-50",
-    },
-    {
-        id: "cancer-awareness",
-        title: "Cancer Awareness Program",
-        description: "Increasing awareness, promoting early detection, and debunking myths surrounding cancer.",
-        icon: Dna,
-        subsections: [
-            "Prevention Strategies",
-            "Early Screening Linkages",
-            "Myths & Facts Education"
-        ],
-        details: "Addressing cultural stigmas and providing community-based education on cancer prevention and early diagnostic services.",
-        color: "text-teal-500",
-        bgColor: "bg-teal-50",
-    },
-    {
-        id: "mental-health",
-        title: "Mental Health Program",
-        description: "Addressing mental health challenges through awareness, counseling, and supportive workshops.",
-        icon: Brain,
-        subsections: [
-            "Stigma Reduction Awareness",
-            "Professional Counseling",
-            "Resilience Workshops"
-        ],
-        details: "Creating safe spaces for mental health discussion and providing professional psychological support for community members.",
-        color: "text-blue-500",
-        bgColor: "bg-blue-50",
-    },
-    {
-        id: "education",
-        title: "Education",
-        description: "Fostering inclusivity and leadership through innovative educational programs.",
-        icon: GraduationCap,
-        subsections: [
-            "Leadership Training",
-            "School Support Gaps",
-            "Elimisha Wote (2024)"
-        ],
-        details: "Targeting teenage mothers who missed school delivery opportunities through our 'Elimisha Wote' initiative aimed at fostering lifelong inclusivity.",
-        color: "text-indigo-500",
-        bgColor: "bg-indigo-50",
-    },
-    {
-        id: "drug-substance-abuse",
-        title: "Drug & Substance Abuse Sensitization",
-        description: "Taking an active stand against drug addiction through counseling and rehabilitation.",
-        icon: ShieldAlert,
-        subsections: [
-            "Counseling Services",
-            "Rehab Center Referrals",
-            "50% Reduction Goal in Kajulu"
-        ],
-        details: "Providing direct linkages to rehabilitation centers and counseling for youth affected by addiction in the Kajulu region.",
-        color: "text-yellow-500",
-        bgColor: "bg-yellow-50",
-    },
-    {
-        id: "economic-empowerment",
-        title: "Economic Empowerment",
-        description: "Building sustainable livelihoods through business training and financial support.",
-        icon: TrendingUp,
-        subsections: [
-            "Business Plan Preparation",
-            "Financial Grant Support",
-            "Income Generation for Women"
-        ],
-        details: "Leveraging our team's financial expertise to train youths and women on business proposal writing and sustainable self-dependence.",
-        color: "text-green-600",
-        bgColor: "bg-green-50",
-    }
-];
 
 const highlights = [
     {
@@ -169,61 +64,49 @@ const Programs = () => {
                 <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/4 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl -z-10" />
             </section>
 
-            {/* Impact Programs Grid Section */}
             <section id="impact-programs" className="section-padding">
                 <div className="container mx-auto">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="text-center mb-16"
-                    >
-                        <p className="text-sm font-black text-primary tracking-widest uppercase mb-4">Focus Areas</p>
-                        <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter">OUR <span className="text-primary italic">IMPACT</span> PROGRAMS</h2>
-                    </motion.div>
-
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-                        {programs.map((program, index) => (
+                    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                        {[
+                            {
+                                title: "Reproductive Health",
+                                description: "Menstrual hygiene, family planning awareness, and contraceptive education for young people.",
+                                image: "/reproductive.png",
+                            },
+                            {
+                                title: "Education & Leadership",
+                                description: "Leadership training, school support interventions, and capacity building for youth.",
+                                image: "/education2.png",
+                            },
+                            {
+                                title: "Mental Health",
+                                description: "Awareness, stigma reduction, counseling, peer support, and community workshops.",
+                                image: "/mental.jpeg",
+                            },
+                            {
+                                title: "Economic Empowerment",
+                                description: "Small business training, financial support, and income-generation activities.",
+                                image: "/empowerment.jpg",
+                            },
+                        ].map((program, i) => (
                             <motion.div
-                                key={program.id}
+                                key={i}
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                transition={{ delay: index * 0.1, duration: 0.5 }}
-                                className="group bg-card border border-border rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 flex flex-col h-full"
+                                transition={{ delay: i * 0.1, duration: 0.5 }}
+                                className="group bg-card border border-border rounded-xl overflow-hidden hover:shadow-xl transition-shadow duration-300"
                             >
-                                {/* Empty Image Placeholder */}
-                                <div className={`aspect-[4/3] ${program.bgColor} flex flex-col items-center justify-center border-b border-border/50 group-hover:bg-primary/5 transition-colors duration-500`}>
-                                    <ImageIcon className={`${program.color} opacity-20 mb-3`} size={48} />
-                                    <p className="text-[10px] uppercase font-black tracking-widest opacity-30">Image Placeholder</p>
+                                <div className="aspect-[4/3] overflow-hidden">
+                                    <img
+                                        src={program.image}
+                                        alt={program.title}
+                                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                    />
                                 </div>
-
-                                <div className="p-8 flex flex-col flex-grow">
-                                    <div className={`w-10 h-10 ${program.bgColor} ${program.color} rounded-lg flex items-center justify-center mb-6`}>
-                                        <program.icon size={20} />
-                                    </div>
-
-                                    <h3 className="text-xl font-bold mb-4 leading-tight group-hover:text-primary transition-colors">
-                                        {program.title}
-                                    </h3>
-
-                                    <p className="text-sm text-muted-foreground/80 mb-6 leading-relaxed flex-grow">
-                                        {program.description}
-                                    </p>
-
-                                    <div className="space-y-3 pt-6 border-t border-border/50 mb-6">
-                                        {program.subsections.map((sub, i) => (
-                                            <div key={i} className="flex items-center gap-2">
-                                                <CheckCircle2 className={`${program.color} shrink-0`} size={14} />
-                                                <span className="text-[13px] font-bold text-foreground/70">{sub}</span>
-                                            </div>
-                                        ))}
-                                    </div>
-
-                                    <div className={`mt-auto p-4 ${program.bgColor} rounded-xl border border-border/50`}>
-                                        <p className="text-[11px] font-bold uppercase tracking-wider mb-1 opacity-50">Local Impact Context</p>
-                                        <p className="text-xs text-muted-foreground leading-relaxed italic">"{program.details}"</p>
-                                    </div>
+                                <div className="p-5">
+                                    <h3 className="text-lg font-bold mb-2 uppercase tracking-tight">{program.title}</h3>
+                                    <p className="text-sm text-muted-foreground leading-relaxed font-medium">{program.description}</p>
                                 </div>
                             </motion.div>
                         ))}
