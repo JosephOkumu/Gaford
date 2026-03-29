@@ -48,6 +48,30 @@
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
+
+  ::selection {
+    @apply bg-primary/20 text-primary;
+  }
+}
+
+@layer base {
+
+  /* ... Custom Scrollbar for better UI experience ... */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary/20 rounded-full border-2 border-transparent transition-colors duration-300;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary/40;
+  }
 }
 
 @layer base {
@@ -70,5 +94,14 @@
 @layer utilities {
   .section-padding {
     @apply py-16 md:py-24 px-4 md:px-8;
+  }
+
+  /* Premium Design Utilities */
+  .premium-blur {
+    @apply backdrop-blur-md bg-white/40 border border-white/20 shadow-lg;
+  }
+
+  .fancy-hover {
+    @apply transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 active:scale-95;
   }
 }

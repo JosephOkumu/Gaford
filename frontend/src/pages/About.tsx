@@ -306,21 +306,32 @@ const About = () => {
                             {
                                 name: "Tangata Group",
                                 image: "/Tangata.png",
+                                website: "https://www.tangatagroup.org/",
                                 description: "Tangata Group is a human and disability rights-based organization that facilitates collaboration among domestic and international communities in developing local projects."
                             },
                             {
                                 name: "Activate Action",
                                 image: "/activate.jpg",
+                                website: "https://activateaction.org/",
                                 description: "Activate Action is a youth-led for impact organization. We empower young people and women in Kenya, including those living with HIV and disabilities, through integrated services in health, mental health, HIV prevention, leadership development, and economic empowerment."
                             },
+                            {
+                                name: "Mama Agnes Ochilo Foundation",
+                                image: "/Ochillo.jpeg",
+                                website: "#",
+                                description: "This initiative represents not just the provision of physical materials, but a renewed commitment to fostering an environment conducive to learning and growth."
+                            },
                         ].map((partner, index) => (
-                            <motion.div
+                            <motion.a
                                 key={index}
+                                href={partner.website}
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.1 }}
-                                className="bg-background p-8 rounded-[2.5rem] border border-border/50 shadow-sm hover:shadow-xl transition-all group h-full flex flex-col"
+                                className="bg-background p-8 rounded-[2.5rem] border border-border/50 shadow-sm hover:shadow-xl transition-all group h-full flex flex-col cursor-pointer"
                             >
                                 <div className="w-full rounded-[1.5rem] overflow-hidden mb-8 border border-border/10 shadow-sm relative group-hover:shadow-xl transition-all duration-500 bg-background">
                                     {partner.image ? (
@@ -341,23 +352,9 @@ const About = () => {
                                 <p className="text-sm text-muted-foreground leading-relaxed font-medium">
                                     {partner.description}
                                 </p>
-                            </motion.div>
+                            </motion.a>
                         ))}
 
-                        {/* Additional placeholders to maintain layout */}
-                        {[1, 2].map((item) => (
-                            <motion.div
-                                key={`placeholder-${item}`}
-                                initial={{ opacity: 0, scale: 0.95 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: (item + 1) * 0.1 }}
-                                className="bg-background/40 border border-dashed border-border/50 p-8 rounded-[2.5rem] flex flex-col items-center justify-center text-muted-foreground/20 min-h-[300px]"
-                            >
-                                <Users size={48} />
-                                <p className="mt-4 text-sm font-bold uppercase tracking-widest">Future Partner</p>
-                            </motion.div>
-                        ))}
                     </div>
 
                     <div className="mt-16 text-center border-t border-border pt-12">
