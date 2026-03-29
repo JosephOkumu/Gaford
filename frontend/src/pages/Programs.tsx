@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import {
     Heart,
     GraduationCap,
@@ -79,6 +80,9 @@ const highlights = [
 ];
 
 const Programs = () => {
+    const [showAll, setShowAll] = useState(false);
+    const visibleHighlights = showAll ? highlights : highlights.slice(0, 8);
+
     return (
         <div className="bg-background">
             {/* Hero Section */}
@@ -168,41 +172,51 @@ const Programs = () => {
                     </motion.div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                        {highlights.map((item, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: index * 0.1, duration: 0.5 }}
-                                className="group bg-card border border-border rounded-xl overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col h-full text-foreground"
-                            >
-                                <div className="aspect-[4/3] overflow-hidden">
-                                    <img
-                                        src={item.image}
-                                        alt={item.title}
-                                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                                    />
-                                </div>
-                                <div className="p-5 flex flex-col flex-grow bg-card">
-                                    <div className="flex items-center gap-2 text-primary mb-3">
-                                        <Calendar size={14} />
-                                        <span className="text-[11px] font-bold uppercase tracking-wider">{item.date} • {item.type}</span>
+                        <AnimatePresence>
+                            {visibleHighlights.map((item, index) => (
+                                <motion.div
+                                    key={index}
+                                    initial={{ opacity: 0, y: 30 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: (index % 4) * 0.1, duration: 0.5 }}
+                                    className="group bg-card border border-border rounded-xl overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col h-full text-foreground"
+                                >
+                                    <div className="aspect-[4/3] overflow-hidden">
+                                        <img
+                                            src={item.image}
+                                            alt={item.title}
+                                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                        />
                                     </div>
-                                    <h3 className="text-lg font-bold mb-2 uppercase tracking-tight">{item.title}</h3>
-                                    <p className="text-sm text-muted-foreground leading-relaxed font-medium">
-                                        {item.description}
-                                    </p>
-                                </div>
-                            </motion.div>
-                        ))}
+                                    <div className="p-5 flex flex-col flex-grow bg-card">
+                                        <div className="flex items-center gap-2 text-primary mb-3">
+                                            <Calendar size={14} />
+                                            <span className="text-[11px] font-bold uppercase tracking-wider">{item.date} • {item.type}</span>
+                                        </div>
+                                        <h3 className="text-lg font-bold mb-2 uppercase tracking-tight">{item.title}</h3>
+                                        {item.description && (
+                                            <p className="text-sm text-muted-foreground leading-relaxed font-medium">
+                                                {item.description}
+                                            </p>
+                                        )}
+                                    </div>
+                                </motion.div>
+                            ))}
+                        </AnimatePresence>
                     </div>
 
-                    <div className="mt-16 text-center">
-                        <Button variant="outline" className="rounded-full px-8 h-12 font-bold border-white/20 text-white bg-white/10 hover:bg-white/20 transition-all transition-colors group shadow-none">
-                            Load More Highlights <ArrowRight size={18} className="ml-2 group-hover:translate-x-1 transition-transform" />
-                        </Button>
-                    </div>
+                    {!showAll && highlights.length > 8 && (
+                        <div className="mt-16 text-center">
+                            <Button
+                                onClick={() => setShowAll(true)}
+                                variant="outline"
+                                className="rounded-full px-8 h-12 font-bold border-white/20 text-white bg-white/10 hover:bg-white/20 transition-all transition-colors group shadow-none"
+                            >
+                                Load More Highlights <ArrowRight size={18} className="ml-2 group-hover:translate-x-1 transition-transform" />
+                            </Button>
+                        </div>
+                    )}
                 </div>
             </section>
 
