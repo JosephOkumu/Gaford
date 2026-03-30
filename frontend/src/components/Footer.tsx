@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Facebook, Linkedin } from "lucide-react";
+import { Facebook, Linkedin, Mail, Phone, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/gaford-logo.jpg";
 
@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer className="bg-secondary text-secondary-foreground">
       <div className="container mx-auto pt-16 md:pt-24 pb-8 px-4 md:px-8">
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div>
             <img src={logo} alt="GaFORD" className="h-14 w-auto mb-4 bg-card rounded p-1" />
@@ -66,6 +66,29 @@ const Footer = () => {
                   </Link>
                 </li>
               ))}
+            </ul>
+          </div>
+
+          {/* Contact Us */}
+          <div>
+            <h4 className="text-lg font-semibold mb-4">Contact Us</h4>
+            <ul className="space-y-4 text-sm text-secondary-foreground/70">
+              <li className="flex items-center gap-3">
+                <Mail className="text-primary shrink-0" size={16} />
+                <a href="mailto:info@gaford.org" className="hover:text-primary transition-colors">
+                  info@gaford.org
+                </a>
+              </li>
+              <li className="flex items-center gap-3">
+                <Phone className="text-primary shrink-0" size={16} />
+                <a href="tel:+254722667247" className="hover:text-primary transition-colors">
+                  +254 7XX XXX XXX
+                </a>
+              </li>
+              <li className="flex items-center gap-3">
+                <MapPin className="text-primary shrink-0" size={16} />
+                <span>Nairobi, Kenya / Maryland, USA</span>
+              </li>
             </ul>
           </div>
         </div>
