@@ -206,14 +206,22 @@ const Programs = () => {
                         </AnimatePresence>
                     </div>
 
-                    {!showAll && highlights.length > 8 && (
+                    {highlights.length > 8 && (
                         <div className="mt-16 text-center">
                             <Button
-                                onClick={() => setShowAll(true)}
+                                onClick={() => setShowAll(!showAll)}
                                 variant="outline"
                                 className="rounded-full px-8 h-12 font-bold border-none text-primary bg-white/10 hover:bg-white/20 transition-all group shadow-none"
                             >
-                                Load More Highlights <ArrowRight size={18} className="ml-2 group-hover:translate-x-1 transition-transform" />
+                                {showAll ? (
+                                    <>
+                                        View Less Highlights<ArrowRight size={18} className="ml-2 -rotate-90 group-hover:-translate-y-1 transition-transform" />
+                                    </>
+                                ) : (
+                                    <>
+                                        Load More Highlights <ArrowRight size={18} className="ml-2 group-hover:translate-x-1 transition-transform" />
+                                    </>
+                                )}
                             </Button>
                         </div>
                     )}
