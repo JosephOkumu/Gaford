@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { CheckCircle, ArrowRight } from "lucide-react";
+import { CheckCircle, ArrowRight, Mail } from "lucide-react";
 import volunteerImg from "@/assets/volunteer.jpg";
 
 const benefits = [
@@ -37,10 +37,18 @@ const VolunteerCTA = () => {
                 </li>
               ))}
             </ul>
-            <div className="pt-4 border-t border-border/50">
-              <p className="text-xs uppercase tracking-widest text-muted-foreground font-bold mb-1">Email Us</p>
-              <a href="mailto:info@gaford.org" className="text-xl font-bold text-primary hover:underline">
-                info@gaford.org
+            <div className="pt-8 border-t border-border/50">
+              <a
+                href="mailto:info@gaford.org"
+                className="inline-flex items-center gap-4 group p-1 pr-6 rounded-full border border-primary/20 bg-primary/5 hover:bg-primary/10 transition-all duration-300"
+              >
+                <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-primary/20">
+                  <Mail size={20} />
+                </div>
+                <div>
+                  <p className="text-[10px] uppercase tracking-widest text-foreground font-black mb-0.5">Contact Us</p>
+                  <p className="text-lg font-black text-foreground">info@gaford.org</p>
+                </div>
               </a>
             </div>
           </motion.div>
