@@ -211,7 +211,7 @@ const Programs = () => {
                             <Button
                                 onClick={() => setShowAll(true)}
                                 variant="outline"
-                                className="rounded-full px-8 h-12 font-bold border-white/20 text-white bg-white/10 hover:bg-white/20 transition-all transition-colors group shadow-none"
+                                className="rounded-full px-8 h-12 font-bold border-none text-primary bg-white/10 hover:bg-white/20 transition-all group shadow-none"
                             >
                                 Load More Highlights <ArrowRight size={18} className="ml-2 group-hover:translate-x-1 transition-transform" />
                             </Button>
