@@ -15,14 +15,13 @@ const VolunteerCTA = () => {
   return (
     <section className="section-padding bg-muted">
       <div className="container mx-auto">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <p className="text-sm font-medium text-primary tracking-widest uppercase mb-3">Join The Movement</p>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Get Involved:{" "}
               <span className="text-primary italic">Become a Volunteer</span>
@@ -38,11 +37,12 @@ const VolunteerCTA = () => {
                 </li>
               ))}
             </ul>
-            <Link to="/get-involved">
-              <Button size="lg" className="gap-2">
-                Volunteer Now <ArrowRight size={16} />
-              </Button>
-            </Link>
+            <div className="pt-4 border-t border-border/50">
+              <p className="text-xs uppercase tracking-widest text-muted-foreground font-bold mb-1">Email Us</p>
+              <a href="mailto:info@gaford.org" className="text-xl font-bold text-primary hover:underline">
+                info@gaford.org
+              </a>
+            </div>
           </motion.div>
 
           <motion.div
