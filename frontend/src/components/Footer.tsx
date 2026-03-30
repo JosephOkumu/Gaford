@@ -39,7 +39,6 @@ const Footer = () => {
               {[
                 { label: "About Us", to: "/about" },
                 { label: "Our Programs", to: "/programs" },
-                { label: "Impact & Stories", to: "/impact" },
                 { label: "Get Involved", to: "/get-involved" },
                 { label: "Contact Us", to: "/contact" },
               ].map((link) => (
