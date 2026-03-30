@@ -5,13 +5,13 @@ import logo from "@/assets/gaford-logo.jpg";
 
 const Footer = () => {
   return (
-    <footer className="bg-secondary text-secondary-foreground">
+    <footer className="bg-black text-white">
       <div className="container mx-auto pt-16 md:pt-24 pb-8 px-4 md:px-8">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div>
             <img src={logo} alt="GaFORD" className="h-14 w-auto mb-4 bg-card rounded p-1" />
-            <p className="text-secondary-foreground/70 text-sm leading-relaxed">
+            <p className="text-white/70 text-sm leading-relaxed">
               Gateway for Rural Development — empowering youth, strengthening communities through health, education, and economic opportunity.
             </p>
             <div className="flex gap-3 mt-5">
@@ -22,7 +22,7 @@ const Footer = () => {
                 <a
                   key={i}
                   href={href}
-                  className="w-9 h-9 rounded-full bg-secondary-foreground/10 flex items-center justify-center hover:bg-primary transition-colors"
+                  className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -35,7 +35,7 @@ const Footer = () => {
           {/* Quick Links */}
           <div>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-2 text-sm text-secondary-foreground/70">
+            <ul className="space-y-2 text-sm text-white/70">
               {[
                 { label: "About Us", to: "/about" },
                 { label: "Our Programs", to: "/programs" },
@@ -55,7 +55,7 @@ const Footer = () => {
           {/* Legal */}
           <div>
             <h4 className="text-lg font-semibold mb-4">Legal</h4>
-            <ul className="space-y-2 text-sm text-secondary-foreground/70">
+            <ul className="space-y-2 text-sm text-white/70">
               {[
                 { label: "Privacy Policy", to: "/privacy" },
                 { label: "Terms of Use", to: "/terms" },
@@ -72,7 +72,7 @@ const Footer = () => {
           {/* Contact Us */}
           <div>
             <h4 className="text-lg font-semibold mb-4">Contact Us</h4>
-            <ul className="space-y-4 text-sm text-secondary-foreground/70">
+            <ul className="space-y-4 text-sm text-white/70">
               <li className="flex items-center gap-3">
                 <Mail className="text-primary shrink-0" size={16} />
                 <a href="mailto:info@gaford.org" className="hover:text-primary transition-colors">
@@ -93,7 +93,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-secondary-foreground/10 mt-12 pt-6 flex justify-center items-center text-xs text-secondary-foreground/50">
+        <div className="border-t border-white/10 mt-12 pt-6 flex justify-center items-center text-xs text-white/50">
           <p>© {new Date().getFullYear()} GaFORD — Gateway for Rural Development. All rights reserved.</p>
         </div>
       </div>
