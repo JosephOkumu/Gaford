@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ScrollToTop from "@/components/ScrollToTop";
 import Index from "./pages/Index";
 import Programs from "./pages/Programs";
 import GetInvolved from "./pages/GetInvolved";
@@ -23,8 +24,9 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <Navbar />
-        <div className="pt-16 md:pt-20">
+        <div className="pt-16 md:pt-22">
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/about" element={<About />} />

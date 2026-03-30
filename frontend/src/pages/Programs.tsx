@@ -245,7 +245,7 @@ const Programs = () => {
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                             {[
-                                { label: "Youth Mentored", value: "5,000+", icon: Users },
+                                { label: "Youth Mentored", value: "2,000+", icon: Users },
                                 { label: "Schools Reached", value: "45+", icon: GraduationCap },
                                 { label: "Hygiene Kits", value: "12,000+", icon: Heart },
                                 { label: "Success Rate", value: "98%", icon: TrendingUp },
@@ -281,11 +281,6 @@ const Programs = () => {
                                 <Link to="/get-involved">
                                     <Button size="lg" className="rounded-full px-10 h-14 text-lg font-bold bg-primary text-secondary hover:scale-105 transition-all shadow-lg shadow-primary/20">
                                         Be Part of the Legacy
-                                    </Button>
-                                </Link>
-                                <Link to="/about">
-                                    <Button variant="outline" size="lg" className="rounded-full px-10 h-14 text-lg font-bold border-2 hover:bg-muted transition-all">
-                                        Our Philosophy
                                     </Button>
                                 </Link>
                             </div>
