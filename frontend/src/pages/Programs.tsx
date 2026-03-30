@@ -60,7 +60,7 @@ const highlights = [
         title: "International Collaboration",
         image: "/event1.jpeg",
         date: "August 2025",
-        description: "Gaford's executive director Collins Oswago with Janet E. Lord, a UN Special Rapporteur on rights of persons with disabilities who also serves as the executive director of the University of Baltimore's Center for International and Comparative Law.",
+        description: "Gaford's executive director Collins Oswago with Janet E. Lord, a UN Special Rapporteur on rights of persons with disabilities.",
         type: "Advocacy"
     },
     {
