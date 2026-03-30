@@ -35,6 +35,7 @@ const GetInvolved = () => {
                 <div className="container mx-auto">
                     <div className="grid lg:grid-cols-2 gap-16">
                         <motion.div
+                            id="partner-section"
                             initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
@@ -109,7 +110,9 @@ const GetInvolved = () => {
                 </div>
             </section>
 
-            <VolunteerCTA />
+            <section id="volunteer-section">
+                <VolunteerCTA />
+            </section>
         </main>
     );
 };

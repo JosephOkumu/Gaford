@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Heart, Users, Handshake, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -16,6 +16,7 @@ const ways = [
     title: "Volunteer",
     description: "Join our team in Kenya or the USA. Share your skills through mentoring, fundraising, or fieldwork.",
     link: "/get-involved",
+    anchor: "volunteer-section",
     cta: "Join Us",
   },
   {
@@ -23,11 +24,21 @@ const ways = [
     title: "Partner",
     description: "Collaborate with us as an NGO, institution, or corporate partner to amplify community impact.",
     link: "/get-involved",
+    anchor: "partner-section",
     cta: "Learn More",
   },
 ];
 
 const GetInvolvedSection = () => {
+  const location = useLocation();
+
+  const handleScroll = (anchor: string) => {
+    const element = document.getElementById(anchor);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section className="section-padding bg-card">
       <div className="container mx-auto">
@@ -58,7 +69,15 @@ const GetInvolvedSection = () => {
               </div>
               <h3 className="text-xl font-bold mb-3">{way.title}</h3>
               <p className="text-sm text-muted-foreground leading-relaxed mb-5">{way.description}</p>
-              <Link to={way.link}>
+              <Link
+                to={way.link}
+                onClick={(e) => {
+                  if (location.pathname === way.link && way.anchor) {
+                    e.preventDefault();
+                    handleScroll(way.anchor);
+                  }
+                }}
+              >
                 <Button variant="outline" size="sm" className="gap-1 rounded-full">
                   {way.cta} <ArrowRight size={14} />
                 </Button>
