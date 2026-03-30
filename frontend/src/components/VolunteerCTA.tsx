@@ -60,7 +60,7 @@ const VolunteerCTA = () => {
             transition={{ duration: 0.6 }}
           >
             <img
-              src={volunteerImg}
+              src="/volunteer.jpg"
               alt="Volunteer with GaFORD"
               className="rounded-2xl w-full object-cover aspect-[4/3]"
             />
