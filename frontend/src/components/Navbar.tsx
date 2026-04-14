@@ -28,16 +28,16 @@ const Navbar = () => {
             <Link
               key={link.to}
               to={link.to}
-              className={`text-sm font-medium transition-colors border-b-2 ${location.pathname === link.to
+              className={`text-sm font-bold transition-colors border-b-2 ${location.pathname === link.to
                 ? "text-foreground border-orange-500"
-                : "text-muted-foreground hover:text-foreground border-transparent"
+                : "text-foreground hover:text-orange-500 border-transparent"
                 }`}
             >
               {link.label}
             </Link>
           ))}
           <Link to="/donate">
-            <Button className="rounded-full px-6 bg-orange-500 hover:bg-orange-600 text-white">Donate Now</Button>
+            <Button className="rounded-full px-6 bg-orange-500 hover:bg-orange-600 text-white font-bold">Donate Now</Button>
           </Link>
         </nav>
 
@@ -58,9 +58,9 @@ const Navbar = () => {
                 key={link.to}
                 to={link.to}
                 onClick={() => setOpen(false)}
-                className={`px-4 py-3 text-sm font-medium rounded-md transition-colors border-b-2 ${location.pathname === link.to
+                className={`px-4 py-3 text-sm font-bold rounded-md transition-colors border-b-2 ${location.pathname === link.to
                   ? "text-foreground border-orange-500"
-                  : "text-muted-foreground hover:text-foreground border-transparent"
+                  : "text-foreground hover:text-orange-500 border-transparent"
                   }`}
               >
                 {link.label}

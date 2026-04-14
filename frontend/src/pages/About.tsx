@@ -19,7 +19,7 @@ const About = () => {
                         <h1 className="text-5xl md:text-7xl font-black mb-8 tracking-tighter uppercase leading-none">
                             OUR <span className="text-primary italic">STORY</span>
                         </h1>
-                        <p className="text-xl md:text-2xl text-muted-foreground font-medium leading-relaxed mb-12">
+                        <p className="text-xl md:text-2xl text-foreground font-bold leading-relaxed mb-12">
                             Gateway for Rural Development (GaFORD) is a Community Based Organization (CBO), dedicated to serving vulnerable adolescents, women, and youth.
                         </p>
                         <div className="w-24 h-2 bg-primary mx-auto rounded-full" />
@@ -47,7 +47,7 @@ const About = () => {
                                 </div>
                                 <div>
                                     <h2 className="text-3xl font-black uppercase tracking-tighter mb-6 leading-none">HOW IT <span className="text-primary italic">STARTED</span></h2>
-                                    <p className="text-lg text-muted-foreground leading-relaxed">
+                                    <p className="text-lg text-foreground leading-relaxed font-bold">
                                         GaFORD was born out of a deep-seated desire to bridge the gap in resources for rural communities. We recognized that while many initiatives exist, the most marginalized — persons with disability, orphans, and those from low-income families — were often left behind.
                                     </p>
                                 </div>
@@ -210,7 +210,7 @@ const About = () => {
                     >
                         <p className="text-sm font-black text-primary tracking-widest uppercase mb-4">The Visionaries</p>
                         <h2 className="text-4xl md:text-6xl font-black mb-8 uppercase tracking-tighter">OUR <span className="text-primary italic">TEAM</span></h2>
-                        <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-medium">
+                        <p className="text-lg text-foreground max-w-2xl mx-auto font-bold">
                             Our strength lies in our experts who are dedicated to training, economic empowerment, and sustainable community development.
                         </p>
                     </motion.div>

@@ -18,7 +18,7 @@ const GetInvolved = () => {
                         <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
                             Help Us Build a <span className="text-primary italic">Better</span> Future
                         </h1>
-                        <p className="text-lg text-muted-foreground leading-relaxed">
+                        <p className="text-lg text-foreground font-bold leading-relaxed">
                             At GaFORD, we believe that sustainable change starts with community action.
                             Whether you're looking to donate, volunteer, or partner with us, your
                             contribution matters.

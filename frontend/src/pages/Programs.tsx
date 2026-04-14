@@ -97,7 +97,7 @@ const Programs = () => {
                             <h1 className="text-4xl md:text-5xl lg:text-7xl font-black mb-8 leading-tight">
                                 Our <span className="text-primary italic">Programs</span>
                             </h1>
-                            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed mb-10">
+                            <p className="text-xl md:text-2xl text-foreground font-bold leading-relaxed mb-10">
                                 At GaFORD, we believe in a holistic approach to community development. Our programs are designed to address the interconnected needs of adolescents, youth, and women in rural areas.
                             </p>
                         </motion.div>
@@ -246,7 +246,7 @@ const Programs = () => {
                             <h2 className="text-4xl md:text-6xl font-black mb-6 uppercase tracking-tighter text-foreground">
                                 THE SCALE OF <span className="italic text-primary">OUR MISSION</span>
                             </h2>
-                            <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed font-medium">
+                            <p className="text-xl text-foreground max-w-2xl mx-auto leading-relaxed font-bold">
                                 Beyond the programs, it's about the lives we touch and the sustainable future we build together in rural communities.
                             </p>
                         </motion.div>
