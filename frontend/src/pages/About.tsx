@@ -231,6 +231,7 @@ const About = () => {
                             {
                                 name: "George Elijah",
                                 role: "Director: Asset, Strategy and Knowledge Management",
+                                image: "/George.jpeg",
                                 bio: "George has a background in Physics, Computer Technology, and Security with a Master of Science degree in Physics and a Bachelor of Science from the University of Nairobi and holds certifications in CompTIA A+ ce and CompTIA Security+ ce certifications."
                             },
                             {
@@ -241,6 +242,7 @@ const About = () => {
                             {
                                 name: "Kenneth Odoyo",
                                 role: "Finance and Administration Director",
+                                image: "/Kenneth.jpeg",
                                 bio: "Kenneth O. Odoyo holds a Bachelor’s Degree in Commerce (Finance) from KCA University and is currently pursuing C.P.A. He has vast knowledge and experience in Financial Management."
                             },
                             {
